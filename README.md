@@ -1,49 +1,49 @@
-📊 NovaRetail+ Customer Behavior Analysis
-Overview
+📊 Análisis de Comportamiento de Clientes en NovaRetail+
+Descripción del proyecto
 
-This project explores the relationship between customer behavior and the annual revenue generated for NovaRetail+, a large e-commerce platform operating across Latin America.
+Este proyecto analiza los factores de comportamiento de los clientes que están más relacionados con los ingresos anuales generados para NovaRetail+, una plataforma de comercio electrónico con presencia en Latinoamérica.
 
-The objective was to identify which customer characteristics and behaviors are most strongly associated with revenue generation, using a correlation-based analytical approach. The analysis focuses on discovering meaningful relationships while avoiding causal assumptions.
+El análisis se desarrolló utilizando técnicas estadísticas de correlación, visualización de datos y análisis exploratorio para identificar patrones de comportamiento que puedan aportar información valiosa a los equipos de crecimiento y retención. El objetivo no fue establecer relaciones causales, sino descubrir asociaciones significativas que ayuden a comprender mejor qué características y acciones de los clientes están vinculadas con una mayor generación de ingresos.
 
-Through exploratory analysis, statistical correlation methods, and data visualization, the project provides business-oriented insights that can support customer retention, growth, and marketing strategies.
+Objetivo de negocio
 
-Business Problem
+El equipo de Crecimiento y Retención de NovaRetail+ buscaba responder una pregunta clave:
 
-The Growth and Retention team at NovaRetail+ wanted to understand:
+¿Qué factores del comportamiento de los clientes están más fuertemente asociados con los ingresos anuales generados para la empresa?
 
-Which customer behaviors are most strongly associated with annual revenue generation?
+Responder esta pregunta permite identificar oportunidades para mejorar estrategias de retención, segmentación, fidelización y optimización de inversiones en marketing.
 
-Answering this question can help the company prioritize initiatives that improve customer engagement, retention, and long-term value.
-
-Because the goal is to identify associations rather than establish cause-and-effect relationships, the analysis was designed as a correlational and exploratory study.
-
+Objetivos del análisis
+Explorar el comportamiento de los clientes mediante análisis descriptivos.
+Identificar relaciones significativas entre variables de comportamiento e ingresos.
+Aplicar diferentes métodos de correlación según el tipo de variable analizada.
+Detectar correlaciones potencialmente engañosas o mal interpretadas.
+Documentar supuestos, limitaciones y alcances del análisis.
+Transformar los hallazgos en recomendaciones de negocio accionables.
 Dataset
 
-The dataset contains information for 15,000 customers and includes demographic, behavioral, engagement, and business value variables.
+El conjunto de datos contiene información de 15.000 clientes y combina variables demográficas, de comportamiento, satisfacción y valor económico.
 
-Key Variables
-Variable	Descriptionedad	Customer age
-nivel_ingreso	Estimated annual customer income
-visitas_mes	Monthly website/app visits
-compras_mes	Monthly purchases
-gasto_publicidad_dirigida	Advertising spend assigned to the customer
-satisfaccion	Customer satisfaction score (1-5)
-miembro_premium	Premium membership indicator
-abandono	Customer churn indicator
-tipo_dispositivo	Preferred device type
-region	Geographic region
-ingreso_anual	Annual revenue generated for the company
+Variables incluidas
+Variable	Descripciónid_cliente	Identificador único del cliente
+edad	Edad del cliente
+nivel_ingreso	Ingreso anual estimado del cliente
+visitas_mes	Número de visitas mensuales a la plataforma
+compras_mes	Número de compras realizadas por mes
+gasto_publicidad_dirigida	Inversión publicitaria asociada al cliente
+satisfaccion	Calificación de satisfacción del cliente (1-5)
+miembro_premium	Indica si el cliente posee suscripción premium
+abandono	Indica si el cliente abandonó la plataforma
+tipo_dispositivo	Dispositivo principal utilizado
+region	Región geográfica del cliente
+ingreso_anual	Ingreso anual generado para la empresa
+Variable objetivo
 
-Target Variable: ingreso_anual
+ingreso_anual
 
-Project Objectives
-Explore customer behavior patterns.
-Identify variables associated with annual revenue.
-Compare different correlation techniques depending on variable types.
-Detect potentially misleading correlations.
-Document assumptions and limitations.
-Translate analytical findings into business recommendations.
-Tools and Technologies
+Esta variable representa el valor económico generado por cada cliente y constituye el foco principal del análisis.
+
+Tecnologías utilizadas
 Python
 Jupyter Notebook
 Pandas
@@ -51,72 +51,83 @@ NumPy
 Matplotlib
 Seaborn
 SciPy
-Methodology
-1. Data Exploration
-Dataset inspection
-Data type validation
-Summary statistics
-Missing value assessment
-2. Data Preparation
-Feature selection
-Validation of analytical assumptions
-Data cleaning and formatting
-3. Exploratory Visualization
+Metodología
+1. Exploración inicial de datos
 
-Visual techniques were used to identify patterns and potential relationships:
+Se realizó una inspección general del conjunto de datos para comprender:
 
-Correlation heatmaps
-Scatter plots
-Distribution analysis
-4. Correlation Analysis
+Estructura del dataset.
+Tipos de datos.
+Estadísticas descriptivas.
+Calidad y consistencia de la información.
+2. Preparación de datos
 
-Different statistical approaches were applied according to the nature of the variables:
+Durante esta etapa se llevaron a cabo tareas de:
 
-Pearson Correlation
+Validación de variables.
+Revisión de valores faltantes.
+Definición de supuestos de análisis.
+Selección de variables relevantes.
+3. Análisis exploratorio y visualización
 
-Used for linear relationships between numerical variables.
+Se utilizaron diferentes técnicas visuales para identificar patrones y relaciones potenciales:
 
-Spearman Correlation
+Heatmaps de correlación.
+Scatterplots.
+Distribuciones de variables.
+Comparaciones entre segmentos de clientes.
+4. Análisis de correlación
 
-Used for monotonic relationships and non-normal distributions.
+Debido a la naturaleza diversa de las variables, se aplicaron diferentes métodos estadísticos:
 
-Point-Biserial Correlation
+Correlación de Pearson
 
-Used to evaluate relationships between binary and continuous variables.
+Utilizada para medir relaciones lineales entre variables numéricas.
 
-Cramér's V
+Correlación de Spearman
 
-Used to measure associations between categorical variables.
+Aplicada para detectar relaciones monotónicas cuando los datos no cumplen supuestos de normalidad o linealidad.
 
-5. Interpretation
+Correlación Punto-Biserial
 
-Results were interpreted using the following framework:
+Utilizada para analizar relaciones entre variables binarias y variables numéricas continuas.
 
-Evidence → Statistical Relationship → Business Implication
+V de Cramér
 
-Special attention was given to avoiding causal conclusions from correlational evidence.
+Aplicada para evaluar la fuerza de asociación entre variables categóricas.
 
-Key Questions Investigated
-Do more frequent purchases correlate with higher revenue?
-Is customer satisfaction associated with greater annual value?
-Are premium members more profitable than non-premium customers?
-Does customer churn impact revenue generation?
-Are there regional or device-related behavioral patterns?
-Limitations
-Correlation does not imply causation.
-External factors not included in the dataset may influence customer behavior.
-Results depend on the variables available in the dataset.
-Findings should be validated through experimentation before making strategic decisions.
-Business Value
+5. Interpretación de resultados
 
-The insights generated from this analysis can help NovaRetail+:
+Los hallazgos fueron evaluados bajo el siguiente enfoque:
 
-Improve customer retention strategies.
-Optimize marketing investments.
-Identify high-value customer segments.
-Design future experiments and predictive models.
-Prioritize initiatives that increase customer lifetime value.
-Repository Structure
+Evidencia estadística → Interpretación responsable → Implicación de negocio
+
+En todo momento se evitó inferir causalidad a partir de correlaciones observadas.
+
+Preguntas de investigación
+
+Durante el análisis se exploraron preguntas como:
+
+¿Existe relación entre la frecuencia de compra y los ingresos generados?
+¿La satisfacción del cliente está asociada con un mayor valor económico?
+¿Los clientes premium generan más ingresos que los no premium?
+¿El abandono afecta significativamente los ingresos?
+¿Existen diferencias relevantes según la región o el dispositivo utilizado?
+Limitaciones del estudio
+El análisis es exclusivamente correlacional.
+Las correlaciones encontradas no implican relaciones de causa y efecto.
+Pueden existir variables externas no incluidas en el dataset que influyan en los resultados.
+Los hallazgos deben validarse mediante experimentación o análisis complementarios antes de tomar decisiones estratégicas.
+Valor para el negocio
+
+Los resultados de este proyecto pueden ayudar a NovaRetail+ a:
+
+Identificar comportamientos asociados con clientes de alto valor.
+Diseñar estrategias más efectivas de retención.
+Optimizar campañas de marketing y asignación de recursos.
+Mejorar iniciativas de fidelización y suscripciones premium.
+Priorizar futuras investigaciones y experimentos orientados al crecimiento.
+Estructura del repositorio
 Plain Text
 Project-NovaRetail/
 │
@@ -132,10 +143,12 @@ Project-NovaRetail/
 │ └── scatterplot_2.png
 │
 ├── README.md
-│
 └── requirements.txt
-Author
+Resultados esperados
+
+El producto final consiste en un análisis exploratorio y correlacional completamente documentado que combina evidencia visual y estadística para comprender mejor los factores asociados al valor económico generado por los clientes de NovaRetail+. Los hallazgos obtenidos sirven como base para futuras estrategias de crecimiento, retención y experimentación basada en datos.
+
+Autor
 
 Luis Felipe Gómez Contreras
-
-Data Analytics Portfolio Project developed as part of the TripleTen Data Analyst Program.
+ Proyecto desarrollado como parte del programa Data Analyst de TripleTen.
